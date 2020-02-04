@@ -122,10 +122,12 @@ nav ul li a:hover {
 .wrap-cards .wrap-image {
   width: 100%;
   margin-bottom: 20px;
+  
 }
 
 .wrap-cards .wrap-image img {
   width: 100%;
+  border-radius: 15px;
 }
 
 .wrap-cards .card .card-title {
