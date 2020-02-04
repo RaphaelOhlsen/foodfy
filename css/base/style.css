@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+  --color-salmon: #fbdfdb;
+  --color-white: #fff;
+  --color-hover: #ee806f;
+  --color-text-primary: #111111;
+  --color-text-secondary: #000;
+  --color-text-author: #777;
+  --color-text-content: #444;
+  --color-text-background: #eee;
+  --color-text-footer: #999;
+}
+
+
+.focus {
+  color: var(--color-hover);
+}
+
+.center-940px {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.center-1400px {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  color: var(--color-text-primary)
+}
+
+.header.center-940px{
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  max-width: 940px;
+  margin: 0 auto 20px;
+}
+
+.brand {
+  flex-grow:1
+}
+
+nav {
+  flex-grow: 2
+}
+
+nav ul {
+  display: flex;
+  font-size: 1.6em
+}
+
+nav ul li:first-child {
+  margin-right: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--color-text-primary)
+}
+
+nav ul li a:hover {
+  
+  color: var(--color-hover)
+}
+
+.banner.center-940px {
+  width: 100%;
+  height: 366px;
+  background-color: var(--color-salmon);
+  border-radius: 30px;
+  padding: 0 70px;
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.wrap-article {
+  flex-grow: 1;
+  align-self: center;
+  
+}
+
+.banner header {
+  font-size: 3.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.banner article {
+  font-size: 1.8em;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  max-width: 316px;
+}
+
+.banner img {
+  align-self: flex-end;
+}
+
+.recipes header {
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.wrap-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2%;
+  margin-bottom: 80px;
+}
+
+.wrap-cards .card{
+  margin-bottom: 30px;
+  cursor: pointer
+}
+
+.wrap-cards .wrap-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.wrap-cards .wrap-image img {
+  width: 100%;
+}
+
+.wrap-cards .card .card-title {
+  font-weight: 400;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.warp-cards .card .author-card {
+  color: var(--color-text-author);
+  font-size: 1.4em;
+}
+
+.footer {
+  background-color: var(--color-text-background);
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.footer p {
+  color: var(--color-text-footer);
+  font-size: 1.4em; 
+}
+
+
+/* ABOUT */
+
+
+.about:last-child {
+  margin-bottom: 50px;
+}
+
+.about {
+  margin-bottom: 30px;
+}
+
+.about header {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.about header.title {
+  font-size: 2.4em;
+}
+
+.about p {
+  line-height: 1.6;
+  font-size: 1.8em;
+  color: var(--color-text-content);
+}
+
+.about p:last-child {
+  margin-top: 20px;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* visibility: hidden; */
+}
+
+.modal-overlay.hidden {
+  visibility: hidden;
+}
+
+.modal {
+  width: 660px;
+  height: 413px;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.modal .wrap-image {
+  width: 600px;
+  height: 200px;
+  border-bottom: 20px;
+  position:absolute;
+  overflow: hidden;
+  border-radius: 15px
+}
+
+.modal .wrap-image img {
+  width: 100%;
+  position: relative;
+  top: -40px;
+}
+
+.modal .modal-title {
+  color: var(--color-text-primary);
+  font-size: 2.4em;
+  margin-bottom: 5px;
+  text-align: center;
+  margin-top: 220px;
+}
+
+.modal .modal-author {
+  font-size: 1.8em;
+  color: var(--color-text-author);
+  text-align: center;
+}
+
+.modal .close-button {
+  font-size: 1.6em;
+  text-align: center;
+  color: var(--color-text-footer);
+  margin-top: 60px;
+  cursor: pointer;
+}
