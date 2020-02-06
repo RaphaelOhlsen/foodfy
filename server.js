@@ -14,7 +14,7 @@ nunjucks.configure("views", {
 });
 
 server.get("/", (req, res) => {
-  return res.send("OK")
+  return res.render("layout");
 })
 
 
