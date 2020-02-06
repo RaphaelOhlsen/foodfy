@@ -5,6 +5,9 @@
   "repository": "https://github.com/RaphaelOhlsen/foodfy.git",
   "author": "Raphael Bernardo Ohlsen <raphael.ohlsen@gmail.com>",
   "license": "MIT",
+  "scripst": {
+    "start": "nodemon server.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "nunjucks": "^3.2.0"
