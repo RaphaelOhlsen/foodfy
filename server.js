@@ -15,11 +15,15 @@ nunjucks.configure("views", {
 
 server.get("/", (req, res) => {
   return res.render("main");
-})
+});
 
 server.get("/recipes", (req, res) => {
   return res.render("recipes");
-})
+});
+
+server.get("/about", (req,res) => {
+  return res.render("about");
+});
 
 server.listen(5000, () => {
   console.log('Server is running')
