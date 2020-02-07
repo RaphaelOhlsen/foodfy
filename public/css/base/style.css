@@ -290,20 +290,17 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-.wrap-recipe .ingredients {
-  transition: display 500ms;
-}
-
 .wrap-recipe .ingredients.hidde {
   display: none;
+  overflow: hidden;
 }
 
 .wrap-recipe .content.hidde {
   display: none;
+  overflow: hidden;
 }
 
 .wrap-recipe .list-item, 
-.wrap-recipe .content,
 .wrap-recipe .content {
   font-size: 1.8em;
   color: var(--color-text-content);
@@ -324,8 +321,7 @@ nav ul li a:hover {
   margin-bottom: 40px;
 }
 
-.wrap-recipe .content,
 .wrap-recipe .content {
   margin-bottom: 40px;
+  height: auto;
 }
-
