@@ -13,126 +13,20 @@
 {% block content %}  
   <section class="center-940px">
     <div class="wrap-cards">
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/burger.png" alt="triplo bacon burger">
-        </div>
-        <header class="card-title">
-          <h3>Tripo bacon burger</h3>
-        </header>
-        <p class="author-card">por Jorge Relato</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/pizza.png" alt="pizza 4 estações">
-        </div>
-        <header class="card-title">
-          <h3>Pizza 4 estações</h3>
-        </header>
-        <p class="author-card">por Fabiana Melo</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/espaguete.png" alt="espaguete ao alho">
-        </div>
-        <header class="card-title">
-          <h3>Espaguete ao alho</h3>
-        </header>
-        <p class="author-card">por Júlia Kinoto</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/lasanha.png" alt="lazanha cheese">
-        </div>
-        <header class="card-title">
-          <h3>Lasanha Cheese</h3>
-        </header>
-        <p class="author-card">por Juliano Vieira</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/doce.png" alt="docinhos pao-do-céu">
-        </div>
-        <header class="card-title">
-          <h3>Docicinhos pão-do-céu</h3>
-        </header>
-        <p class="author-card">por Ricardo Golvea</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/asinhas.png" alt="Asinhas de frango ao barbecue">
-        </div>
-        <header class="card-title">
-          <h3>Asinhas de frango ao barbecue</h3>
-        </header>
-        <p class="author-card">por Vania Steroski</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/burger.png" alt="triplo bacon burger">
-        </div>
-        <header class="card-title">
-          <h3>Tripo bacon burger</h3>
-        </header>
-        <p class="author-card">por Jorge Relato</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/pizza.png" alt="pizza 4 estações">
-        </div>
-        <header class="card-title">
-          <h3>Pizza 4 estaçÕes</h3>
-        </header>
-        <p class="author-card">por Fabiana Melo</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/espaguete.png" alt="espaguete ao alho">
-        </div>
-        <header class="card-title">
-          <h3>Espaguete ao alho</h3>
-        </header>
-        <p class="author-card">por Júlia Kinoto</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/lasanha.png" alt="lazanha cheese">
-        </div>
-        <header class="card-title">
-          <h3>Lasanha Cheese</h3>
-        </header>
-        <p class="author-card">por Juliano Vieira</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/doce.png" alt="docinhos pao-do-céu">
-        </div>
-        <header class="card-title">
-          <h3>Docicinhos pão-do-céu</h3>
-        </header>
-        <p class="author-card">por Ricardo Golvea</p>
-      </article>
-      <article class="card">
-        <div class="wrap-image">
-          <img src="./assets/asinhas.png" alt="Asinhas de frango ao barbecue">
-        </div>
-        <header class="card-title">
-          <h3>Asinhas de frango ao barbecue</h3>
-        </header>
-        <p class="author-card">por Vania Steroski</p>
-      </article>
+      {% for recipe in recipes %}
+        <article class="card" id={{ recipe.id }}>
+          <div class="wrap-image">
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+          </div>
+          <header class="card-title">
+            <h3>{{ recipe.title }}</h3>
+          </header>
+          <p class="author-card">{{ recipe.author }}</p>
+        </article>
+      {% endfor %}
     </div>
   </section>
 
-  <div class="modal-overlay hidden">
-    <div class="modal">
-      <div class="wrap-image">
-        <img class="modal-img" src="" alt="assinhas de frango">
-      </div>
-      <h1 class="modal-title"></h1>
-      <p class="modal-author">por Vania Steroski</p>
-      <p class="close-button">Fechar modal</p>
-    </div>
-  </div>
+  
   <script src="/scripts.js"></script>
 {% endblock %}
