@@ -20,16 +20,10 @@ routes.get("/recipes/:index", (req, res) => {
     return console.log('Recipe is not found')
   }
   const recipe = recipes[recipeIndex];
-  console.log(recipe)
   return res.render("recipe", { recipe });
-  // const id = req.query.id;
-  // const recipe = recipes.find(recipe => recipe.id == id);
-  // if (!recipe) res.send("Recipe is not found");
-  // console.log(recipe);
-  // return res.render("recipe", { recipe });
 });
 
-server.get("/about", (req,res) => {
+routes.get("/about", (req,res) => {
   return res.render("about");
 });
 
