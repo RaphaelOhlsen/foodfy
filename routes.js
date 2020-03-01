@@ -1,9 +1,12 @@
 const express = require('express');
 const routes = express.Router();
+const adminRecipes = require('./controllers/recipes')
 
 const recipes = require('./data');
 
+// ************************
 // ROTAS DO SITE
+// ************************
 
 routes.get('/', (req,res) => {
   return res.render('main', { recipes });
@@ -26,5 +29,12 @@ routes.get("/recipes/:index", (req, res) => {
 routes.get("/about", (req,res) => {
   return res.render("about");
 });
+
+// ************************
+// ADMIN
+// ************************
+
+routes.get("/admin/recipes", adminRecipes.index);
+routes.get("/admin", adminRecipes.index);
 
 module.exports = routes;
