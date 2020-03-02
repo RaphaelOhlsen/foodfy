@@ -1,3 +1,3 @@
 exports.index = (req, res) => {
-  return res.render('layout')
+  return res.render('admin/layout')
 }
