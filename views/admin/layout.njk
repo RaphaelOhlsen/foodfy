@@ -22,20 +22,15 @@
         <img src="/assets/logoAdmin.png" alt="logomarca da Foodfy">
       </a>
     </div>
-    <nav>
-      <ul>
-        {% block li %}
-          <li><a href="/about">Sobre</a></li>
-          <li><a href="/recipes">Receitas</a></li>
-        {% endblock %}
-      </ul>
-    </nav>
-    </div>
-    
+
   </header>
-  
-  {% block content %}{% endblock %}
-  
+  <main class="center-940px">
+    <h1 class="admin-header">
+      {% block title %}{% endblock %}
+    </h1>
+    
+    {% block content %}{% endblock %}
+  </main>
 
   {% block script %}{% endblock %}
 </body>

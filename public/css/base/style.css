@@ -44,7 +44,7 @@ body {
 
 .header.admin > .center-940px {
   padding: 25px 0;
-  margin-bottom: 50px;
+  margin-bottom: 55px;
 }
 
 .header.admin {
@@ -335,3 +335,57 @@ nav ul li a:hover {
   margin-bottom: 40px;
   height: auto;
 }
+
+
+/* ADMIN PAGE*/
+
+.admin-header {
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.admin.wrap-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 10px;
+  /* gap: 20%; */
+  margin-bottom: 0;
+}
+
+.admin.wrap-cards > .card {
+  display: grid;
+  grid-template-columns: 172px 1fr;
+  margin: 0;
+  cursor: auto;
+}
+
+.admin.wrap-cards > .card > .wrap-image {
+  margin: 0;
+}
+
+.admin.wrap-cards > .card > .wrap-image > img {
+  width: 100%;
+  height: 100%;
+}
+
+.admin.wrap-cards > .card > .info {
+  margin: 0 0 5px 20px;
+}
+
+.info > .card-title {
+  font-size: 18px;
+}
+
+.info > .author-card {
+  color: var(--color-text-author);
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.info > a {
+  text-decoration: none;
+  font-size: 1.4em;
+}
+

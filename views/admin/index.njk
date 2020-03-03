@@ -1,0 +1,24 @@
+{% extends "admin/layout.njk" %}
+
+{% block title %}Gerenciar Receitas{% endblock title %}
+
+{% block content %}
+<div class="admin wrap-cards">
+  {% for recipe in recipes %}
+    <div class="card">
+      <div class="wrap-image">
+        <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+      </div>
+      <div class="info">
+        <header class="card-title">
+          <h2>{{ recipe.title }}</h2>
+        </header>
+        <p class="author-card">{{ recipe.author }}</p>
+         <a href="">Visualizar</a>
+      </div>
+     
+    </div> 
+  {% endfor %}
+</div>
+{% endblock content %}
+
