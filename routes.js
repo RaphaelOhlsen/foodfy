@@ -9,11 +9,11 @@ const recipes = require('./data');
 // ************************
 
 routes.get('/', (req,res) => {
-  return res.render('main', { recipes });
+  return res.render('public/main', { recipes });
 });
 
 routes.get("/recipes", (req, res) => {
-  return res.render("recipes", { recipes });
+  return res.render("public/recipes", { recipes });
 });
 
 routes.get("/recipes/:index", (req, res) => {
@@ -23,11 +23,11 @@ routes.get("/recipes/:index", (req, res) => {
     return console.log('Recipe is not found')
   }
   const recipe = recipes[recipeIndex];
-  return res.render("recipe", { recipe });
+  return res.render("public/recipe", { recipe });
 });
 
 routes.get("/about", (req,res) => {
-  return res.render("about");
+  return res.render("public/about");
 });
 
 // ************************
@@ -36,5 +36,6 @@ routes.get("/about", (req,res) => {
 
 routes.get("/admin/recipes", adminRecipes.index);
 routes.get("/admin", adminRecipes.index);
+
 
 module.exports = routes;
