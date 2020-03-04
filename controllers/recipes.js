@@ -1,3 +1,4 @@
+const fs = require('fs');
 const data = require('../data.json');
 
 exports.index = (req, res) => {
@@ -10,6 +11,41 @@ exports.create = (req, res) => {
 }
 
 exports.post = (req, res) => {
-  console.log(req.body);
-  return res.send('OK')
+  const keys = Object.keys(req.body);
+
+  keys.forEach(key => {
+    if(req.body[key] == "") {
+      return res.send("Favor preencher todos os campos");
+    }
+  });
+
+  let { 
+    image, 
+    title, 
+    author, 
+    ingredients, 
+    preparation, 
+    information } = req.body;
+  
+  let id = 1;
+  const lastRecipe = data.recipes[data.recipes.length - 1];
+  if(lastRecipe) {
+    id = lastRecipe.id + 1;
+  }
+
+  data.recipes.push({
+    id,
+    image,
+    title,
+    author,
+    ingredients,
+    preparation,
+    information
+  });
+
+  fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
+    if(err) return res.send("Write file error");
+    return res.redirect("/admin");
+  });
+  
 }

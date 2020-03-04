@@ -38,8 +38,7 @@ routes.get("/admin/recipes", adminRecipes.index);
 routes.get("/admin", adminRecipes.index);
 routes.get("/admin/recipes/create", adminRecipes.create);
 
-// routes.post('/admin/recipes', adminRecipes.post);
-routes.post('/admin/recipes', (req,res) => console.log(req.body));
+routes.post('/admin/recipes', adminRecipes.post);
 
 
 module.exports = routes;
