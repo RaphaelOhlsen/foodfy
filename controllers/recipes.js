@@ -49,3 +49,12 @@ exports.post = (req, res) => {
   });
   
 }
+
+exports.show = (req,res) => {
+  const { id } = req.params;
+  const recipe = data.recipes.find(recipe => {
+    return recipe.id == id;
+  })
+  if (!recipe) return res.send("receita não foi encontrada");
+  return res.render("admin/recipe", { recipe });
+}

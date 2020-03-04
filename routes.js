@@ -37,6 +37,7 @@ routes.get("/about", (req,res) => {
 routes.get("/admin/recipes", adminRecipes.index);
 routes.get("/admin", adminRecipes.index);
 routes.get("/admin/recipes/create", adminRecipes.create);
+routes.get("/admin/recipes/:id", adminRecipes.show);
 
 routes.post('/admin/recipes', adminRecipes.post);
 

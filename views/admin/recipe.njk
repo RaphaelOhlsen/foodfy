@@ -1,4 +1,4 @@
-{% extends "public/layout.njk" %}
+{% extends "admin/layout.njk" %}
 
 {% block head %}
   <title>Receita deliciosa de {{ receita.title }}</title>
@@ -20,7 +20,7 @@
     <div class="wrap-recipe">
         
         <h2 class="title">Ingredientes</h2>
-        <span class="show-button" >FECHAR</span>
+        <span class="show-button" >MOSTRAR</span>
       
       <ul class="ingredients">
       {% for ingredient in recipe.ingredients %}
@@ -30,13 +30,13 @@
       <div class="gap"></div>
 
         <h2 class="title">Modo de preparo</h2>
-        <span class="show-button">FECHAR</span>
+        <span class="show-button">MOSTRAR</span>
      
       <p class="content" id="preparation">{{ recipe.preparation }}</p>
       <div class="gap"></div>
 
       <h2 class="title">Informações adicionais</h2>
-      <span class="show-button">FECHAR</span>
+      <span class="show-button">MOSTRAR</span>
       <p class="content" id="information" >{{ recipe.information}}</p>
     </div>
   </div>
