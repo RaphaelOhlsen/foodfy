@@ -10,6 +10,7 @@
   --color-text-content: #444;
   --color-text-background: #eee;
   --color-text-footer: #999;
+  --color-purple: #6558c3
 }
 
 
@@ -389,3 +390,23 @@ nav ul li a:hover {
   font-size: 1.4em;
 }
 
+/* ADMIN CREATE PAGE */
+.wrap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrap-header > .admin-header {
+  margin: 0;
+}
+
+.wrap-header > button {
+  box-sizing: border-box;
+  width: 139px;
+  height: 37px;
+  background-color: var(--color-purple);
+  border-radius: 4px;
+  color: var(--color-white);
+  border: none;
+}

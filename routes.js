@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = express.Router();
-const adminRecipes = require('./controllers/recipes')
+const adminRecipes = require('./controllers/recipes');
 
 const recipes = require('./data');
 
@@ -36,6 +36,7 @@ routes.get("/about", (req,res) => {
 
 routes.get("/admin/recipes", adminRecipes.index);
 routes.get("/admin", adminRecipes.index);
+routes.get("/admin/recipes/create", adminRecipes.create);
 
 
 module.exports = routes;
