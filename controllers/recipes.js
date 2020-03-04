@@ -8,3 +8,8 @@ exports.index = (req, res) => {
 exports.create = (req, res) => {
   return res.render('admin/create');
 }
+
+exports.post = (req, res) => {
+  console.log(req.body);
+  return res.send('OK')
+}
