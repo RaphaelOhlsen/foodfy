@@ -164,19 +164,6 @@
         "ferver a salsicha "
       ],
       "information": "Colocar mostarda"
-    },
-    {
-      "id": 9,
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
-      "title": "Hot Dog",
-      "author": "Raphael Ohlsen",
-      "ingredients": [
-        "salsicha"
-      ],
-      "preparation": [
-        "ferver a salsicha "
-      ],
-      "information": "Colocar mostarda"
     }
   ]
 }

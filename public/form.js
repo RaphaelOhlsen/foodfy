@@ -10,3 +10,8 @@ saveButton.addEventListener("click", () => {
 deleteButton.addEventListener("click", () => {
   form.action = "/admin/recipes?_method=DELETE"; 
 });
+
+form.addEventListener("submit", e => {
+  const confirmation = confirm('Deseja Deletar ?');
+  if(!confirmation) e.preventDefault();
+})
