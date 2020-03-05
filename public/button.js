@@ -14,5 +14,5 @@ showButtons.forEach(showButton => {
     } else {
       content.classList.add("hidde");
     }
-  })
-})
+  });
+});

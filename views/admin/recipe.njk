@@ -13,14 +13,19 @@
   <div class="wrap-image-recipe">
     <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
   </div>
-  <h1 class="recipe-title">{{ recipe.title }}</h1>
-  <p class="recipe-author">por {{ recipe.author }}</p>
+  <div class="wrap-title">
+    <div>
+      <h1 class="recipe-title">{{ recipe.title }}</h1>
+      <p class="recipe-author">por {{ recipe.author }}</p>
+    </div>
+    <a href="/admin/recipes/{{ recipe.id }}/edit">Editar</a>
+  </div>
 
   <div class="center-940px">
     <div class="wrap-recipe">
         
         <h2 class="title">Ingredientes</h2>
-        <span class="show-button" >MOSTRAR</span>
+        <span class="show-button" >ESCONDER</span>
       
       <ul class="ingredients">
       {% for ingredient in recipe.ingredients %}
@@ -30,13 +35,13 @@
       <div class="gap"></div>
 
         <h2 class="title">Modo de preparo</h2>
-        <span class="show-button">MOSTRAR</span>
+        <span class="show-button">ESCONDER</span>
      
       <p class="content" id="preparation">{{ recipe.preparation }}</p>
       <div class="gap"></div>
 
       <h2 class="title">Informações adicionais</h2>
-      <span class="show-button">MOSTRAR</span>
+      <span class="show-button">ESCONDER</span>
       <p class="content" id="information" >{{ recipe.information}}</p>
     </div>
   </div>

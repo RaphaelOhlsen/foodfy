@@ -1,7 +1,7 @@
 {
   "recipes": [
     {
-      "id": 1,
+      "id": "1",
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
       "title": "Triplo bacon burger",
       "author": "Jorge Relato",
@@ -22,11 +22,11 @@
         "Faça no máximo 4 camadas por forma e leve para congelar.",
         "Retire do congelador, frite ou asse e está pronto."
       ],
-      "information": "Pré-aqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um pouquinho de óleo ou manteiga e não amasse os hambúrgueres! \n\n Você sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açogueiro resolveu também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, como queijom tomates e alface."
+      "information": "                                          Pré-aqueça a chapa, frigideira ou grelha por 10 minutos antes de levar os hambúrgueres. Adicione um pouquinho de óleo ou manteiga e não amasse os hambúrgueres! \r\n\r\n Você sabia que a receita que precede o hambúrguer surgiu no século XIII, na Europa? A ideia de moer a carne chegou em Hamburgo no século XVII, onde um açogueiro resolveu também temperá-la. Assim, a receita foi disseminada nos Estados Unidos por alemães da região. Lá surgiu a ideia de colocar o hambúrguer no meio do pão e adicionar outros ingredientes, como queijom tomates e alface.\r\n    \r\n    \r\n    \r\n    \r\n    \r\n    \r\n    "
     },
     {
-      "id": 2,
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
+      "id": "2",
+      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/pizza.png",
       "title": "Pizza 4 estações",
       "author": "Fabiana Melo",
       "ingredients": [
@@ -50,7 +50,7 @@
         "Cubra a massa com mussarela ralada, tomate e orégano a gosto.",
         "Leve novamente ao forno até derreter a mussarela."
       ],
-      "information": "Pizza de liquidificador é uma receita deliciosa e supersimples de preparar. Feita toda no liquidificador, ela é bem prática para o dia a dia. Aqui no TudoGostoso você também encontra diversas delícias práticas feitas no liquidificador: massa de panqueca, torta de frango de liquidificador, pão de queijo de liquidificador, bolo de banana, bolo de chocolate e muito mais!"
+      "information": "Pizza de liquidificador é uma receita deliciosa e supersimples de preparar. Feita toda no liquidificador, ela é bem prática para o dia a dia. Aqui no TudoGostoso você também encontra diversas delícias práticas feitas no liquidificador: massa de panqueca, torta de frango de liquidificador, pão de queijo de liquidificador, bolo de banana, bolo de chocolate e muito mais!\r\n    \r\n    "
     },
     {
       "id": 3,
@@ -117,9 +117,9 @@
       "information": "Não lave o macarrão nem passe óleo ou gordura nele depois de escorrê-lo. Coloque direto na frigideira."
     },
     {
-      "id": 6,
+      "id": "6",
       "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/doce.png",
-      "title": "Docinhos pão-do-céu",
+      "title": "Docinhos pão-do-céu teste",
       "author": "Ricardo Golvea",
       "ingredients": [
         "1 kg de batata - doce",
@@ -137,7 +137,7 @@
         "Despeje em assadeira retangular média, untada e leve ao forno médio (180°C), por aproximadamente 45 minutos. Depois de frio, polvilhe, com o",
         "açúcar de confeiteiro e corte em quadrados."
       ],
-      "information": ""
+      "information": "      \r\n    "
     },
     {
       "id": 7,
@@ -175,34 +175,6 @@
       ],
       "preparation": [
         "ferver a salsicha "
-      ],
-      "information": "Colocar mostarda"
-    },
-    {
-      "id": 10,
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
-      "title": "Hot Dog",
-      "author": "Raphael Ohlsen",
-      "ingredients": [
-        "salsicha"
-      ],
-      "preparation": [
-        "ferver a salsicha "
-      ],
-      "information": "Colocar mostarda"
-    },
-    {
-      "id": 11,
-      "image": "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/launchbase/receitas/burger.png",
-      "title": "Hot Dog",
-      "author": "Raphael Ohlsen",
-      "ingredients": [
-        "salsicha",
-        "pao"
-      ],
-      "preparation": [
-        "ferver a salsicha ",
-        "teste"
       ],
       "information": "Colocar mostarda"
     }
