@@ -17,21 +17,23 @@
   <header class="header admin">
     <div class="center-940px">
       <div class="brand">
-      <a href="/">
-        <img src="/assets/logoAdmin.png" alt="logomarca da Foodfy">
-      </a>
+        <a href="/">
+          <img src="/assets/logoAdmin.png" alt="logomarca da Foodfy">
+        </a>
+      </div>
+      <div class="links">
+        <a href="/admin/receitas">receitas</a>
+        <a href="/admin/chefs">chefs</a>
+      </div>
     </div>
-
   </header>
   <main class="center-940px">
-    <h1 class="admin-header">
-      {% block title %}{% endblock %}
-    </h1>
-    
+        
     {% block content %}{% endblock %}
   </main>
 
-  {# <script src="/scripts.js"></script> #}
-  {% block script %}{% endblock %}
+  {% block script %}
+     <script src="/scripts.js"></script>
+  {% endblock %}
 </body>
 </html>

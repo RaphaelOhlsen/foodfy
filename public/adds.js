@@ -36,3 +36,8 @@ document
 document
 .querySelector('.add-step')
 .addEventListener("click", addPreparation);
+
+
+document
+  .querySelector('.add-ingredient')
+  .addEventListener("click", addIngredient);

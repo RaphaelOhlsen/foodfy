@@ -1,0 +1,99 @@
+<div class="item">
+  <div>Titulo</div>
+  <div>
+    <input 
+      type="text"
+      name="title"
+      value="{{recipe.title}}"
+    />
+  </div>
+</div>
+<div class="item">
+  <div>Imagem da receita</div>
+  <div>
+    <input 
+      type="text"
+      name="image"
+      value="{{recipe.image}}"
+    />
+  </div>
+</div>
+
+<div class="item">
+  <div>Chef</div>
+  <div>
+    <select name="chef_id">
+      <option value="" disabled selected>Selecione um Chef</option>
+      {% for chef in chefOptions %}
+        <option value="{{chef.id}}"
+          {% if recipe.chef_id == chef.id %}selected{% endif %}>
+          {{ chef.name }}
+        </option>
+      {% endfor %}  
+    </select>
+  </div>
+</div>
+
+<div class="item">
+  <div>Ingredientes</div>
+  <div id="ingredients">
+    {% if recipe.ingredients %}
+      {% for ingredient in recipe.ingredients %}  
+        <div class="ingredient">
+          <input
+            type="text"
+            name="ingredients[]"
+            value="{{ ingredient }}"
+          />
+        </div>
+      {% endfor %}
+      {% else %}
+        <div class="ingredient">
+          <input
+            type="text"
+            name="ingredients[]"
+            value="{{ ingredient }}"
+          />
+        </div>
+    {% endif %}
+  </div>
+  <a class="add-ingredient" href="">Adicionar novo ingrediente</a>
+</div>
+
+<div class="item">
+  <div>Modo de Preparo</div>
+  <div id="steps">
+    {% if recipe.ingredients %}
+      {% for step in recipe.preparation %}   
+        <div class="step">
+          <input 
+            type="text"
+            name="preparation[]",
+            value="{{ step }}"
+          /> 
+        </div>
+      {% endfor %}
+      {% else %}
+        <div class="step">
+          <input 
+            type="text"
+            name="preparation[]",
+            value="{{ step }}"
+          /> 
+        </div>
+    {% endif %}
+  </div>
+  <a class="add-step" href="">Adicionar novo passo</a>
+</div>
+
+<div class="item">
+  <div>Informações Adicionais</div>
+  <div>
+    <textarea 
+      name="information",
+      value="{{ recipe.information }}"
+    >
+      {{ recipe.information }}
+    </textarea>
+  </div>
+</div>

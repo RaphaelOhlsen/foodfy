@@ -1,7 +1,7 @@
 {% extends "admin/layout.njk" %}
 
 {% block head %}
-  <title>Receita deliciosa de {{ receita.title }}</title>
+  <title>Receita deliciosa de {{ recipe.title }}</title>
 {% endblock %}
 
 {% block li%}
@@ -10,15 +10,18 @@
 {% endblock %}
 
 {% block content%}
+  <div class="wrap-header">
+    <h1 class="recipe-title">{{ recipe.title }}</h1>
+    <a href="/admin/recipes/{{ recipe.id }}/edit">Editar Receita</a>
+  </div>
   <div class="wrap-image-recipe">
     <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
   </div>
   <div class="wrap-title">
     <div>
-      <h1 class="recipe-title">{{ recipe.title }}</h1>
-      <p class="recipe-author">por {{ recipe.author }}</p>
+      <h2 class="recipe-title">{{ recipe.title }}</h2>
+      <p class="recipe-author">por {{ recipe.chef_name }}</p>
     </div>
-    <a href="/admin/recipes/{{ recipe.id }}/edit">Editar</a>
   </div>
 
   <div class="center-940px">
@@ -36,8 +39,14 @@
 
         <h2 class="title">Modo de preparo</h2>
         <span class="show-button">ESCONDER</span>
-     
-      <p class="content" id="preparation">{{ recipe.preparation }}</p>
+
+      <ul class="preparation">
+      {% for step in recipe.preparation %}
+        <li class="list-item">{{ step }}</li>
+      {% endfor %}
+      </ul>
+
+      {# <p class="content" id="preparation">{{ recipe.preparation }}</p> #}
       <div class="gap"></div>
 
       <h2 class="title">Informações adicionais</h2>

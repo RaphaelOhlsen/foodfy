@@ -1,4 +1,4 @@
-const data = require('../data.json');
+const data = require('../../data.json');
 
 exports.main = (req, res) => {
   const recipes = data.recipes;
