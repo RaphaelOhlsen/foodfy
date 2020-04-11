@@ -32,7 +32,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
-  color: var(--color-text-primary)
+  color: var(--color-text-primary);
 }
 
 .header.center-940px,
@@ -43,6 +43,7 @@ body {
   max-width: 940px;
   margin: 0 auto 20px;
 }
+
 
 .header.admin > .center-940px {
   padding: 25px 0;
@@ -84,8 +85,12 @@ nav ul {
   font-size: 1.6em
 }
 
-nav ul li:first-child {
+nav ul li {
   margin-right: 30px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
 }
 
 nav ul li a {
@@ -96,6 +101,14 @@ nav ul li a {
 nav ul li a:hover {
   
   color: var(--color-hover)
+}
+
+header .search > input {
+  padding: 10px 15px;
+  font-size: 1.4em;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-right: 8px;
 }
 
 .banner.center-940px {
@@ -144,8 +157,10 @@ nav ul li a:hover {
   margin-bottom: 80px;
 }
 
+
+
 .wrap-cards .card{
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   cursor: pointer
 }
 
@@ -156,6 +171,7 @@ nav ul li a:hover {
 
 .wrap-cards .wrap-image img {
   width: 100%;
+  height: 140px;
   border-radius: 15px;
 }
 
@@ -167,8 +183,13 @@ nav ul li a:hover {
 
 .warp-cards .card .author-card {
   color: var(--color-text-author);
-  font-size: 1.4em;
+  font-size: 14px;
 }
+
+.author-card.main {
+  font-size: 14px;
+  color: var(--color-text-author);
+} 
 
 .footer {
   background-color: var(--color-text-background);
@@ -176,7 +197,6 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .footer p {
@@ -377,7 +397,11 @@ nav ul li a:hover {
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px 10px;
   /* gap: 20%; */
-  margin-bottom: 0;
+  margin-bottom: 50px;
+}
+
+.admin.wrap-cards.chefs {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .admin.wrap-cards > .card {
@@ -385,6 +409,10 @@ nav ul li a:hover {
   grid-template-columns: 172px 1fr;
   margin: 0;
   cursor: auto;
+}
+
+.admin.wrap-cards.chefs > .card {
+  grid-template-columns: 64px 1fr;
 }
 
 .admin.wrap-cards > .card > .wrap-image {
@@ -400,20 +428,35 @@ nav ul li a:hover {
   margin: 0 0 5px 20px;
 }
 
+.admin.wrap-cards.chefs > .card > .info {
+  margin: 0 0 0 10px;
+}
+
+.info.chef {
+  display: grid;
+  align-items: center;
+}
+
 .info > .card-title {
   font-size: 18px;
 }
 
-.info > .author-card {
+.info > .author-card,
+.card > .author-card {
   color: var(--color-text-author);
   font-size: 14px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.info > a {
+.info  a {
   text-decoration: none;
   font-size: 1.4em;
+}
+
+.info p {
+  font-size: 1.4em;
+  color: var(--color-text-author)
 }
 
 /* ADMIN CREATE PAGE */
@@ -434,7 +477,8 @@ nav ul li a:hover {
 
 .wrap-header  button,
 .wrap-title a,
-.wrap-header a {
+.wrap-header a,
+header button {
   box-sizing: border-box;
   padding: 10px 20px;
   background-color: var(--color-purple);
@@ -446,11 +490,13 @@ nav ul li a:hover {
   height: 40px;
 }
 
-.wrap-header.chef h1 {
+.wrap-header.chef h1,
+.wrap-header.recipe h1{
   font-size: 24px;
 }
 
-.wrap-header button#delete-button {
+.wrap-header button#delete-button-recipe,
+.wrap-header button#delete-button-chef {
   background-color: var(--color-danger);
   margin-right: 10px;
 }
@@ -515,6 +561,11 @@ form .item textarea {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  background-color: red;
   margin: 0 auto 30px auto;
+}
+
+.avatar.mini {
+  height: 64px;
+  width: 64px;
+  margin: 0;
 }

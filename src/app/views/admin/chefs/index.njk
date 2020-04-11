@@ -1,0 +1,27 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+
+<div class="wrap-header recipe">
+    <h1 class="recipe-title">Gerenciar Chefs</h1>
+</div>
+<div class="admin wrap-cards chefs">
+  {% for chef in chefs %}
+    <div class="card chef">
+      <div 
+        class="avatar mini"
+        style="background: url({{ chef.avatar_url }}) no-repeat center center/ cover">
+    </div>
+      <div class="info chef">
+        <div>
+          <header class="card-title">
+            <h2>{{ chef.name }}</h2>
+          </header>
+          <a href="/admin/chefs/{{ chef.id }}">Visualizar</a>  
+        </div>
+      </div>
+     
+    </div> 
+  {% endfor %}
+</div>
+{% endblock content %}

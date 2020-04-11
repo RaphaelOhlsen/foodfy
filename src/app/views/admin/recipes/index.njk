@@ -1,7 +1,7 @@
 {% extends "admin/layout.njk" %}
 
 {% block content %}
-<div class="wrap-header">
+<div class="wrap-header recipe">
     <h1 class="recipe-title">Gerenciar Receitas</h1>
 </div>
 <div class="admin wrap-cards">
@@ -14,7 +14,7 @@
         <header class="card-title">
           <h2>{{ recipe.title }}</h2>
         </header>
-        <p class="author-card">{{ recipe.chef_name }}</p>
+        <p class="author-card">por {{ recipe.chef_name }}</p>
          <a href="/admin/recipes/{{ recipe.id }}">Visualizar</a>
       </div>
      

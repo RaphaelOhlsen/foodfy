@@ -1,0 +1,35 @@
+{% extends "public/layout.njk" %}
+
+{% block li%}
+  <li><a href="/about">Sobre</a></li>
+  <li><a href="/recipes">Receitas</a></li>
+  <li><a class="focus" href="/chefs">Chefs</a></li>
+{% endblock %}
+
+{% block search %}
+{% endblock search %}
+
+{% block content %}
+<main class="center-940px">
+  
+  <div class="admin wrap-cards chefs">
+    {% for chef in chefs %}
+      <div class="card chef">
+        <div 
+          class="avatar mini"
+          style="background: url({{ chef.avatar_url }}) no-repeat center center/ cover">
+      </div>
+        <div class="info chef">
+          <div>
+            <header class="card-title">
+              <h2>{{ chef.name }}</h2>
+            </header>
+            <p>{{ chef.total_recipes }} receitas</p>  
+          </div>
+        </div>
+      
+      </div> 
+    {% endfor %}
+  </div>
+</main>
+{% endblock content %}

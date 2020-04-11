@@ -1,0 +1,41 @@
+{% extends "public/layout.njk" %}
+
+{% block head %}
+  <title>Receitas deliciosas</title>
+{% endblock %}
+
+{% block li%}
+  <li><a href="/about">Sobre</a></li>
+  <li><a class="focus" href="/recipes">Receitas</a></li>
+  <li><a href="/chefs">Chefs</a></li>
+{% endblock %}
+
+{% block content %}  
+  <section class="center-940px">
+    <div class="wrap-header recipe">
+      {% if search %}
+        <h1 class="recipe-title">Buscando por "{{ search }}"</h1>
+      {% endif %}
+    </div>
+    <div class="wrap-cards">
+      {% for recipe in recipes %}
+        <article class="card" id={{ recipe.id }}>
+          <div class="wrap-image">
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+          </div>
+          <header class="card-title">
+            <h3>{{ recipe.title }}</h3>
+          </header>
+          <p class="author-card">por {{ recipe.chef_name }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  
+  
+{% endblock %}
+
+{% block script %}
+  <script src="/scripts.js"></script>
+{% endblock %}

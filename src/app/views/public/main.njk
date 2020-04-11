@@ -22,16 +22,20 @@
     </header>
     <div class="wrap-cards">
       {% for recipe in recipes %}
-        <article class="card">
+        <article class="card" id={{ recipe.id }}>
           <div class="wrap-image">
             <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
           </div>
           <header class="card-title">
             <h3>{{ recipe.title }}</h3>
           </header>
-          <p class="author-card">{{ recipe.author }}</p>
+          <p class="author-card main">por {{ recipe.chef_name }}</p>
         </article>
       {% endfor %}
     </div>
   </section>
 {% endblock %} 
+
+{% block script %}
+  <script src="/scripts.js"></script>
+{% endblock %}

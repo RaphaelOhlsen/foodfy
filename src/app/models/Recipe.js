@@ -2,11 +2,48 @@ const db = require('../../config/db');
 const { date } = require('../../lib/utils')
 
 module.exports = {
+
   all(callback) {
     db.query(`
       SELECT recipes.*, chefs.name AS chef_name
       FROM recipes
-      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)`,
+      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+    `, function(err, results) {
+      if(err) throw `Database Error! ${err}`;
+      callback(results.rows);
+    });
+  },
+
+  search(search, callback) {
+    
+    let query = "",
+        filter = "";
+
+    if(search) {
+      filter = `WHERE recipes.title ILIKE '%${search}%'`
+    };
+
+    query = `
+      SELECT recipes.*, chefs.name AS chef_name
+      FROM recipes
+      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+      ${filter}
+    `;
+
+    db.query(query,
+       function(err, results) { 
+        if(err) throw `Database Error! ${err}`;
+        callback(results.rows);
+      }
+    )
+  },
+
+  popular(callback) {
+    db.query(`
+      SELECT recipes.*, chefs.name AS chef_name
+      FROM recipes
+      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+      WHERE recipes.popular = true`,
        function(err, results) { 
         if(err) throw `Database Error! ${err}`;
         callback(results.rows);
@@ -29,7 +66,7 @@ module.exports = {
     `;
 
     const values = [
-      data.chef,
+      data.chef_id,
       data.image,
       data.title,
       data.ingredients,
@@ -57,6 +94,7 @@ module.exports = {
   },
 
   update(data, callback) {
+  
     const query = `
       UPDATE recipes SET
         chef_id=($1),

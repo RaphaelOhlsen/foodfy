@@ -1,0 +1,23 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+<form id="form" method="POST">
+  <main class="center-940px">
+      <div class="wrap-header">
+        <h1 class="admin-header">Editando Chef</h1>
+        <div> 
+          <button id="delete-button-chef" type="submit">Deletar</button>
+          <button id="save-button-chef" type="submit">Salvar chef</button>
+        </div>
+      </div>
+  </main>
+  {% include 'admin/chefs/fields.njk' %}
+  <input type="hidden" name="id" value={{id}}>
+</form>
+
+
+{% endblock content %}
+
+{% block script %}
+  <script src="/form2.js"></script>
+{% endblock %}

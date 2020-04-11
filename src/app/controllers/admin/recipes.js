@@ -21,7 +21,6 @@ module.exports = {
         return res.send("Please, fill all fields");
       }
     });
-
   
     Recipe.create(req.body, function(recipe) {
       return res.redirect(`recipes/${recipe.id}`);
@@ -31,14 +30,14 @@ module.exports = {
   show(req,res) {
     const { id } = req.params;
     Recipe.find(id, function(recipe) {
-      if(!recipe) return res.send('Recipe not found!');
+      if(!recipe) return res.send('Recipes not found!');
       return res.render('admin/recipes/show', { recipe });
     });
   },
 
   edit(req,res) {
     Recipe.find(req.params.id, function(recipe) {
-      if(!recipe) return res.send('Recipe not found!');
+      if(!recipe) return res.send('Recipes not found!');
       
       Recipe.chefSelectOptions( options => {
         return res.render("admin/recipes/edit", {recipe, chefOptions: options});
