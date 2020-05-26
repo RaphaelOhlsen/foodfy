@@ -12,7 +12,8 @@
       </div>
   </main>
   {% include 'admin/chefs/fields.njk' %}
-  <input type="hidden" name="id" value={{id}}>
+  <input type="hidden" name="id" value={{chef.id}}>
+  <input type="hidden" name="fileId" value={{chef.file_id}}>
 </form>
 
 
@@ -20,4 +21,5 @@
 
 {% block script %}
   <script src="/form2.js"></script>
+  <script src="/photos.js"></script>
 {% endblock %}

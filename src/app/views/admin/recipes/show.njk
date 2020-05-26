@@ -15,7 +15,39 @@
     <a href="/admin/recipes/{{ recipe.id }}/edit">Editar Receita</a>
   </div>
   <div class="wrap-image-recipe">
-    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+    {% if not files[0] %}
+      <img src="http://placehold.it/500x500?text=PRODUTO SEM FOTO">
+    {% else %}
+      <img 
+        src="{{ files[0].src }}" 
+        alt="{{files[0].name}}"
+        onclick="LightBox.open()"
+      >
+    {% endif %}
+  </div>
+  <div class="lightbox-target">
+    <img src="{{files[0].src}}" alt="{{files[0].name}}">
+    <a 
+      href="#" 
+      class="lightbox-close"
+      onclick="LightBox.close()"  
+    >
+      <i class="material-icons">close</i>
+    </a>
+  </div>
+  <div class="photos-preview show">
+    {% for image in files %}
+      <div class="photo">
+        <img 
+          src="{{image.src}}" 
+          alt="{{image.name}}"
+          {% if loop.index0 == 0 %}
+              class="active"
+          {% endif %}
+          onclick="ImageGallery.setImage(event)"
+        >
+      </div>
+    {% endfor %}
   </div>
   <div class="wrap-title">
     <div>
@@ -58,4 +90,5 @@
 
 {% block script %}
   <script src="/button.js"></script>
+  <script src="/imagesGallery.js"></script>
 {% endblock %}

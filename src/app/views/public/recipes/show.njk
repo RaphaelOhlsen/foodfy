@@ -32,8 +32,14 @@
         <h2 class="title">Modo de preparo</h2>
         <span class="show-button">FECHAR</span>
      
-      <p class="content" id="preparation">{{ recipe.preparation }}</p>
+      <ul class="preparation">
+      {% for step in recipe.preparation %}
+        <li class="list-item">{{ step }}</li>
+      {% endfor %}
+      </ul>
       <div class="gap"></div>
+      {# <p class="content" id="preparation">{{ recipe.preparation }}</p>
+      <div class="gap"></div> #}
 
       <h2 class="title">Informações adicionais</h2>
       <span class="show-button">FECHAR</span>

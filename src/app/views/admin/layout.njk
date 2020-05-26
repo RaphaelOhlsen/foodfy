@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="/css/generic/reset.css">
   <link rel="stylesheet" href="/css/generic/myreset.css">
   <link rel="stylesheet" href="/css/base/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   {% block head %}
     <title>Foodfy</title>
   {% endblock %}
@@ -21,10 +23,12 @@
           <img src="/assets/logoAdmin.png" alt="logomarca da Foodfy">
         </a>
       </div>
-      <div class="links">
-        <a href="/admin/recipes">receitas</a>
-        <a href="/admin/chefs">chefs</a>
-      </div>
+      {% block nav %}
+        <div class="links">
+          <a href="/admin/recipes">receitas</a>
+          <a href="/admin/chefs">chefs</a>
+        </div>
+      {% endblock nav %}
     </div>
   </header>
   <main class="center-940px">

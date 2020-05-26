@@ -1,5 +1,13 @@
 {% extends "admin/layout.njk" %}
 
+{% block nav %}
+  <div class="links">
+    <a href="/admin/recipes">receitas</a>
+    <a href="/admin/chefs">chefs</a>
+  </div>
+{% endblock nav %}
+
+
 {% block content %}
 <div class="wrap-header recipe">
     <h1 class="recipe-title">Gerenciar Receitas</h1>

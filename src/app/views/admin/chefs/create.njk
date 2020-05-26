@@ -3,7 +3,7 @@
 
 
 {% block content %}
-<form action="/admin/chefs" method="POST">
+<form action="/admin/chefs" method="POST" enctype="multipart/form-data">
   <section class="wrap-header">
     <h1 class="admin-header">Criando Chef</h1>
     <button type="submit">Salvar chef</button>
@@ -12,3 +12,7 @@
 </form>
 
 {% endblock content %}
+
+{% block script %}
+  <script src="/photos.js"></script>
+{% endblock %}

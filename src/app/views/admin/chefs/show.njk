@@ -2,38 +2,44 @@
 
 {% block content %}
   <div class="wrap-header chef">
-    <h1 class="recipe-title">Chef: {{ name }}</h1>
-    <a href="/admin/chefs/{{ id }}/edit">Editar Chef</a>
+    <h1 class="recipe-title">Chef: {{ chef.name }}</h1>
+    <a href="/admin/chefs/{{ chef.id }}/edit">Editar Chef</a>
   </div>
   <div 
     class="avatar"
-    style="background: url({{ avatar_url }}) no-repeat center center/ cover">
+    style="background: url({{ chef.avatar }}) no-repeat center center/ cover">
   </div>
   <div class="wrap-title">
     <div>
-      <h2 class="recipe-title">{{ name }}</h2>
+      <h2 class="recipe-title">{{ chef.name }}</h2>
       <p class="recipe-author">
-        {{ total_recipes}} receitas
+        {% if chef.total_recipes == 0 %}
+          Sem receitas no momento
+        {% elif chef.total_recipes == 1 %}
+          1 receita
+        {% else %}
+        {{ chef.total_recipes}} receitas
+        {%endif%}
       </p>
     </div>
   </div>
   
-  {% if total_recipes %}
+  {% if chef.total_recipes %}
     <div class="wrap-header recipe">
       <h1 class="recipe-title">Receitas</h1>
     </div>
     <div class="admin wrap-cards">
-      {% for recipe in recipes %}
+      {% for recipe in chef.recipes %}
         <div class="card">
           <div class="wrap-image">
-            <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+            <img src="{{ recipe.path }}" alt="{{ recipe.title }}">
           </div>
           <div class="info">
             <header class="card-title">
               <h2>{{ recipe.title }}</h2>
             </header>
-            <p class="author-card">por {{ name }}</p>
-            <a href="/admin/recipes/{{ recipe._id }}">Visualizar</a>
+            <p class="author-card">por {{ chef.name }}</p>
+            <a href="/admin/recipes/{{ recipe.recipe_id }}">Visualizar</a>
           </div>
         </div> 
       {% endfor %}
