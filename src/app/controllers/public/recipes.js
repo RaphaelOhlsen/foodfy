@@ -4,7 +4,7 @@ const File = require('../../models/File');
 module.exports = {
   
   async main(req,res) {
-    let recipes = await Recipes.popular();
+    let recipes = await Recipes.latestAdded();
     recipes = recipes.rows;
     
     if(!recipes) return res.send('Products not found!');

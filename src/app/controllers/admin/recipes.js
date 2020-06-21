@@ -3,24 +3,29 @@ const File = require('../../models/File');
 
 module.exports = {
   async index(req, res) {
-    let results = await Recipe.all();
-    let recipes = results.rows;
+    try {
+      let results = await Recipe.all();
+      let recipes = results.rows;
 
-    if(!recipes) return res.send('Products not found!');
+      if(!recipes) return res.send('Products not found!');
 
-    async function getImage(recipeId) {
-      let results = await File.find(recipeId);
-      const files = results.rows.map(file => `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`)
-      return files[0];
+      async function getImage(recipeId) {
+        let results = await File.find(recipeId);
+        const files = results.rows.map(file => `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`)
+        return files[0];
+      }
+
+      const recipesPromise = recipes.map(async recipe => {
+        recipe.image = await getImage(recipe.id);
+      });
+
+      await Promise.all(recipesPromise);
+
+      return res.render('admin/recipes/index', { recipes });
     }
-
-    const recipesPromise = recipes.map(async recipe => {
-      recipe.image = await getImage(recipe.id);
-    });
-
-    await Promise.all(recipesPromise);
-
-    return res.render('admin/recipes/index', { recipes });
+    catch(err) {
+      console.error(err)
+    }
   },
 
   async create(req, res) {
@@ -143,8 +148,7 @@ module.exports = {
     return res.redirect(`/admin/recipes/${req.body.id}`);
   },
 
-  async delete(req,res) {
-    
+  async delete(req,res) { 
     const removedFiles = await Recipe.delete(req.body.id);
     const removedFilesPromisse = removedFiles.map(id => File.delete(id));
     await Promise.all(removedFilesPromisse);

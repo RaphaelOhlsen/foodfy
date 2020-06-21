@@ -12,6 +12,24 @@ module.exports = {
     `);
   },
 
+  latestAdded() {
+    return db.query(`
+      SELECT recipes.*, chefs.name AS chef_name
+      FROM recipes
+      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+      ORDER BY created_at DESC
+    `);
+  },
+
+  popular() {
+    return db.query(`
+      SELECT recipes.*, chefs.name AS chef_name
+      FROM recipes
+      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+      WHERE recipes.popular = true`
+    );
+  },
+
   search(search) {
     let query = "",
         filter = "";
@@ -25,18 +43,10 @@ module.exports = {
       FROM recipes
       LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
       ${filter}
+      ORDER BY updated_at DESC
     `;
 
     return db.query(query);
-  },
-
-  popular() {
-    return db.query(`
-      SELECT recipes.*, chefs.name AS chef_name
-      FROM recipes
-      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
-      WHERE recipes.popular = true`
-    );
   },
 
   create(data) {

@@ -4,17 +4,17 @@ const File = require('../../models/File');
 module.exports = {
   async index(req,res) {
 
-  let results = await Chef.all();
-  
-  if(!results) return res.send('Products not found!');
+    let results = await Chef.all();
+    
+    if(!results) return res.send('Products not found!');
 
-  const chefs = results.rows;
+    const chefs = results.rows;
 
-  chefs.forEach(chef => {
-    chef.avatar = `${req.protocol}://${req.headers.host}${chef.avatar.replace("public", "")}`
-  })
+    chefs.forEach(chef => {
+      chef.avatar = `${req.protocol}://${req.headers.host}${chef.avatar.replace("public", "")}`;
+    })
 
-  return res.render('admin/chefs/index', { chefs });
+    return res.render('admin/chefs/index', { chefs });
     
   },
   create(req,res) {
