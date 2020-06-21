@@ -5,7 +5,7 @@ const multer = require('../app/middlewares/multer');
 const publicRecipes = require('../app/controllers/public/recipes');
 const publicChefs = require('../app/controllers/public/chefs')
 
-const chefs = require('../app/controllers/admin/chefs');
+const chefs = require('./chefs');
 const recipes = require('../app/controllers/admin/recipes');
 
 // ************************
@@ -32,7 +32,7 @@ routes.post('/admin/recipes', multer.array("photos", 5), recipes.post);
 routes.put('/admin/recipes', multer.array("photos", 5), recipes.put);
 routes.delete('/admin/recipes', recipes.delete);
   
-
+routes.use('/admin/chefs', chefs);
 
 
 module.exports = routes;
