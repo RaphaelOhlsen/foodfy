@@ -1,0 +1,16 @@
+{% extends "admin/layout.njk" %}
+
+{% block content %}
+  <form action="/admin/users" method="POST">
+    <section class="wrap-header user">
+      <h1 class="recipe-title">Criar Usuário</h1>
+      <div> 
+          <button id="save-button-users" type="submit">Salvar</button>
+          <button id="cancel-button-users">Cancelar</button>
+      </div>
+    </section>
+    {% include 'admin/users/fields.njk' %}
+  </form>
+  
+{% endblock content %}
+

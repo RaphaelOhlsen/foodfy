@@ -33,10 +33,9 @@ module.exports = {
   },
 
   find(id) {
-    
     try{
       return db.query(`
-        SELECT chefs.id, chefs.name, chefs.file_id, files.path AS avatar, recipes.id AS _id 
+        SELECT chefs.id, chefs.name, chefs.file_id, files.path AS avatar, recipes.id AS recipe_id
         FROM chefs
         LEFT JOIN recipes ON (recipes.chef_id = chefs.id)
         LEFT JOIN files ON (chefs.file_id = files.id)
@@ -74,4 +73,15 @@ module.exports = {
     await db.query(`DELETE FROM chefs WHERE id = $1`, [data.id]);
     await db.query(` DELETE FROM files WHERE id = $1`, [data.fileId]);
   },
+
+  async totalRecipes(id) {
+    return db.query(`
+      SELECT COUNT(*) AS total
+      FROM recipes
+      LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+      WHERE chefs.id = $1
+      GROUP BY recipes.id
+    `, [id]
+    );
+  }
 }

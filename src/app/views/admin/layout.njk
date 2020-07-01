@@ -5,39 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/css/generic/reset.css">
-  <link rel="stylesheet" href="/css/generic/myreset.css">
-  <link rel="stylesheet" href="/css/base/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+  {% include "parts/styles.njk" %}
   {% block head %}
     <title>Foodfy</title>
   {% endblock %}
 </head>
 
 <body>
-  <header class="header admin">
-    <div class="center-940px">
-      <div class="brand">
-        <a href="/">
-          <img src="/assets/logoAdmin.png" alt="logomarca da Foodfy">
-        </a>
-      </div>
-      {% block nav %}
-        <div class="links">
-          <a href="/admin/recipes">receitas</a>
-          <a href="/admin/chefs">chefs</a>
-        </div>
-      {% endblock nav %}
-    </div>
-  </header>
-  <main class="center-940px">
-        
-    {% block content %}{% endblock %}
-  </main>
+  {% include "../parts/admin/messages.njk" %}
+  {% include "../parts/admin/header.njk" %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
 
   {% block script %}
      <script src="/scripts.js"></script>
+     <script src="/validate.js"></script>
   {% endblock %}
 </body>
 </html>

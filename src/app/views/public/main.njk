@@ -4,8 +4,26 @@
   <title>As melhores receitas culinárias</title>
 {% endblock %}
 
+{% block li%}
+  <li><a href="/about">Sobre</a></li>
+  <li><a href="/recipes">Receitas</a></li>
+  <li><a href="/chefs">Chefs</a></li>
+{% endblock %}
+
+{% block search %}
+  <form class="search" style="visibility: hidden;" action="/recipes" method="get">
+    <input
+      type="text"
+      placeholder="Buscar uma receita"
+      name="search"
+      value={{ search }}
+    >
+    <button type="submit">Buscar</button>
+  </form>
+{% endblock search %}
+
 {% block content %}
-  <section class="banner center-940px">
+  <section class="banner">
     <div class="wrap-article">
       <header>
         <h1>As melhores receitas</h1>
@@ -16,9 +34,9 @@
     </div>
     <img src="./assets/chef.png" alt="chefe de cozinha">
   </section>
-  <section class="recipes center-940px">
+  <section class="recipes">
     <header>
-      <h2>Ultimas Receitas</h2>
+      <h2>Últimas Receitas</h2>
     </header>
     <div class="wrap-cards">
       {% for recipe in recipes %}

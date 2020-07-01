@@ -1,5 +1,6 @@
 const currentPage = location.pathname;
 const menuItens = document.querySelectorAll('header .links a');
+const cancelButton = document.querySelector('#cancel-button-users');
 
 const cards = document.querySelectorAll('.card');
 
@@ -15,3 +16,6 @@ menuItens.forEach(item => {
     item.classList.toggle('active');
 });
 
+cancelButton.addEventListener('click', () => {
+  window.location.href = `http://127.0.0.1:5000/admin`
+})

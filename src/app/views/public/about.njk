@@ -10,8 +10,20 @@
   <li><a href="/chefs">Chefs</a></li>
 {% endblock %}
 
+{% block search %}
+  <form class="search" style="visibility: hidden;" action="/recipes" method="get">
+    <input
+      type="text"
+      placeholder="Buscar uma receita"
+      name="search"
+      value={{ search }}
+    >
+    <button type="submit">Buscar</button>
+  </form>
+{% endblock search %}
+
 {% block content %}  
-  <section class="wrap-articles center-940px">
+  <section class="wrap-articles">
     <article class="about">
       <header class="title">
         <h1>Sobre o Foodfy</h1>

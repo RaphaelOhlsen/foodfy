@@ -41,3 +41,27 @@ document
 document
   .querySelector('.add-ingredient')
   .addEventListener("click", addIngredient);
+
+
+const Item = {
+  deletePrepare(event) {
+    const itemDiv = event.target.parentNode;
+    const stepPrepare = document.querySelectorAll('.step.prepare');
+    const inputPrepare = document.querySelectorAll('.step.prepare > input')
+    if (stepPrepare.length < 2) {
+      inputPrepare[0].value = "";
+      return;
+    }
+    itemDiv.remove();
+  },
+  deleteIngredient(event) {
+    const itemDiv = event.target.parentNode;
+    const stepIngredient = document.querySelectorAll('.step.ingredient');
+    const inputIngredient = document.querySelectorAll('.step.ingredient > input')
+    if (stepIngredient.length < 2) {
+      inputIngredient[0].value = "";
+      return;
+    }
+    itemDiv.remove();
+  }
+}

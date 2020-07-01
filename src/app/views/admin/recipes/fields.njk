@@ -62,21 +62,25 @@
   <div id="ingredients">
     {% if recipe.ingredients %}
       {% for ingredient in recipe.ingredients %}  
-        <div class="ingredient">
+        <div class="step ingredient">
           <input
             type="text"
             name="ingredients[]"
             value="{{ ingredient }}"
           />
+          <i class="material-icons delete" onclick="Item.deleteIngredient(event)">
+                close
+          </i>
         </div>
       {% endfor %}
       {% else %}
-        <div class="ingredient">
+        <div class="step ingredient">
           <input
             type="text"
             name="ingredients[]"
             value="{{ ingredient }}"
           />
+          
         </div>
     {% endif %}
   </div>
@@ -86,14 +90,17 @@
 <div class="item">
   <div>Modo de Preparo</div>
   <div id="steps">
-    {% if recipe.ingredients %}
+    {% if recipe.preparation %}
       {% for step in recipe.preparation %}   
-        <div class="step">
+        <div class="step prepare" id="{{loopIndex}}">
           <input 
             type="text"
             name="preparation[]",
-            value="{{ step }}"
+            value="{{ step }}",
           /> 
+          <i class="material-icons delete" onclick="Item.deletePrepare(event)">
+                close
+          </i>
         </div>
       {% endfor %}
       {% else %}
@@ -104,6 +111,7 @@
             value="{{ step }}"
           /> 
         </div>
+      
     {% endif %}
   </div>
   <a class="add-step" href="">Adicionar novo passo</a>
@@ -112,10 +120,6 @@
 <div class="item">
   <div>Informações Adicionais</div>
   <div>
-    <textarea 
-      name="information",
-      value="{{ recipe.information }}"
-    >{{ recipe.information }}
-    </textarea>
+    <textarea name="information",value="{{ recipe.information }}">{{ recipe.information }}</textarea>
   </div>
 </div>

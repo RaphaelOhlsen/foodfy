@@ -1,12 +1,13 @@
 {% extends "public/layout.njk" %}
 
 {% block head %}
-  <title>Receita deliciosa de {{ receita.title }}</title>
+  <title>Receita deliciosa de {{ recipe.title }}</title>
 {% endblock %}
 
 {% block li%}
   <li><a href="/about">Sobre</a></li>
   <li><a class="focus" href="/recipes">Receitas</a></li>
+  <li><a href="/chefs">Chefs</a></li>
 {% endblock %}
 
 {% block content%}

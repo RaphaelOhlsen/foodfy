@@ -7,10 +7,19 @@
 {% endblock %}
 
 {% block search %}
+  <form class="search" style="visibility: hidden;" action="/recipes" method="get">
+    <input
+      type="text"
+      placeholder="Buscar uma receita"
+      name="search"
+      value={{ search }}
+    >
+    <button type="submit">Buscar</button>
+  </form>
 {% endblock search %}
 
 {% block content %}
-<main class="center-940px">
+<main>
   
   <div class="admin wrap-cards chefs">
     {% for chef in chefs %}
@@ -24,7 +33,16 @@
             <header class="card-title">
               <h2>{{ chef.name }}</h2>
             </header>
-            <p>{{ chef.total_recipes }} receitas</p>  
+            <p>
+              {% if chef.total_recipes == undefined %}
+                Sem receitas no momento
+              {% elif chef.total_recipes == 1 %}
+                1 receita
+              {% else %}
+              {{ chef.total_recipes}} receitas
+              {%endif%}
+
+            </p>  
           </div>
         </div>
       

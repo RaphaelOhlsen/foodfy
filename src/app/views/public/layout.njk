@@ -13,8 +13,8 @@
   {% endblock %}
 </head>
 
-<body>
-  <header class="header center-940px">
+<body class="site">
+  <header class="header">
     <div class="brand">
       <a href="/">
         <img src="/assets/logo.png" alt="logomarca da Foodfy">
@@ -23,10 +23,10 @@
     <nav>
       <ul>
         {% block li %}
-          <li><a href="/about">Sobre</a></li>
+          <li><a class="focus" href="/about">Sobre</a></li>
           <li><a href="/recipes">Receitas</a></li>
           <li><a href="/chefs">Chefs</a></li>
-        {% endblock %}
+        {% endblock%}
       </ul>
     </nav>
     {% block search %}
@@ -41,10 +41,11 @@
       </form>
     {% endblock search %}
   </header>
+ 
+    {% block content %}{% endblock %}
+ 
   
-  {% block content %}{% endblock %}
-  
-  <footer class="footer center-1400px">
+  <footer class="footer">
     <p>Todos direitos reservados, receitas Foodfy.</p>
   </footer>
 
